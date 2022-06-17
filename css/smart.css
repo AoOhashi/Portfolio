@@ -1,0 +1,668 @@
+﻿@charset "UTF-8";
+
+/*ウィンドウ幅が480px以下の場合に適用するCSS*/
+@media screen and (max-width:600px)
+{
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .flexbox {
+        display: flex;
+    }
+
+    .left-box {
+        position: fixed;
+        top: 0;
+        width: 5%;
+        background-color: #1C1C1C;
+    }
+    
+    /*ハンバーガーメニュー*/#humMenu {
+        width: 5%;
+        height: 5vw;
+        background-color: #1C1C1C;
+    }
+ 
+    #humCheck, #humClose { display:none; }
+    #humOpen {
+    display: block;
+    padding-top: 0.6vw;
+    padding-left: 0.6vw;
+    cursor: pointer;
+    }
+
+    #humOpen:hover {
+    opacity: 0.5;
+    }
+    #humOpen img {
+        display: block;
+        width: 4vw;
+        height: 4vw;
+    }
+    #humClose, nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    }
+    #humClose {
+    z-index: 2;
+    width: 100%;
+    background: ;<!--メニュー表示した時の右側の色-->
+    opacity: 0.8;
+    transition: 0.5s;
+    }
+    nav {
+    z-index: 3;
+    width: 22vw;
+    background-color: #0B1013;<!--メニュー表示した時の左側の色-->
+    opacity: 0.4;
+    transition: 0.5s;
+    transform: translateX(-100%); /*左右の移動距離*/
+    }
+    #humCheck:checked ~ #humClose { display: block; }
+    #humCheck:checked ~ nav {
+    transform: translateX(0);
+    }
+    nav ul{
+    overflow: hidden; /*要素のはみ出た部分が隠れる*/
+    list-style: none;
+    }
+    nav li{
+    padding: 0;
+    margin: 0;
+    }
+    nav li:hover{
+    opacity: 0.5; /*透過度*/
+    }
+    nav li a{ /*ハンバーガーメニューの文字*/
+    text-decoration: none;
+    font-size: 3vw;
+    color: crimson;
+    font-family: 'Playfair Display SC', serif;
+    }
+    /*ハンバーガーメニュー*/
+    
+    /*縦文字*/
+    .title-box {
+        width: 5vw;
+        height: 37vw;
+        color: aliceblue;
+        text-align: center;
+        font-family: 'Cinzel Decorative', cursive;
+        writing-mode: tb-rl;
+        background-color: #1C1C1C;
+    }
+    
+    /*店名下線部からした*/
+    .title-box p {
+    }
+    
+    /*トップ画像*/
+    .box1 {
+        width: 95%;
+        height: 42vw;
+        margin-left: auto;
+    }
+    
+    .top-image {
+        width: 100%;
+        height: 42vw;
+        background:url(../images/topimage.jpg);
+        background-size: contain;
+        background-attachment: fixed; /*背景を固定化*/
+    }
+    
+    /*店アイコン*/
+    .box1 img {
+        width: 10vw;
+        margin-top: 1vw;
+        margin-left: 84vw;
+    }
+    
+    /*店名*/
+    .box1 h1 {
+        width: 20vw;
+        margin-top: 4.8vw;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 6vw;
+        font-weight: 600;
+        line-height: 0.8;
+        text-shadow: 5px 5px 5px dimgrey;
+        /*横に1px・縦に2px・ぼかし3px・影の色#808080*/
+        color: crimson;
+        border: 3px solid #AA0000;
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    /*営業時間*/
+    .box1 p {
+        width: 26vw;
+        padding-left: 1vw;
+        margin-top: 3vw;
+        font-size: 1vw;
+        font-weight: 300;
+        color: aliceblue;
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    main section {
+        display: flex;
+    }
+    
+    /*挨拶*/
+    .box2 {
+        width: 95%;
+        height: 58vw;
+        margin-left: auto;
+    }
+    
+    .box2-title {
+        width: 68vw;
+        height: 58vw;
+        background-color: #0B1013;
+    }
+    
+    .box2-title h2 {
+        font-size: 2vw;
+        font-weight: 400;
+        text-align: center;
+        color: aliceblue;
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    .box2-title p {
+        padding-left: 0.8vw;
+        padding-right: 0.4vw;
+        font-size: 0.8vw;
+        font-weight: 100;
+        line-height: 1;
+        text-indent: 1em;
+        letter-spacing: 0.1em;
+        color: aliceblue;
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    .box2-title ul {
+        display: flex;
+        width: 68vw;
+        margin-top: 1.4vw;
+        list-style-type: none;
+    }
+    
+    .box2-title ul li {
+        width: 15vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .box2-title ul li a {
+        display: block;
+        color: aliceblue;
+        text-align: center;
+        line-height: 3;
+        text-decoration: none;
+        border: 1px solid aliceblue;
+        font-size: 1vw;
+        font-family: 'Playfair Display SC', serif;
+        transition: 1s;
+    }
+    
+    .box2-title ul li a:hover {
+       color: crimson;
+        transition: 1s;
+    }
+    
+    .box2-images {
+        width: 27vw;
+        height: 58vw;
+        background-color: #0B1013;
+    }
+    
+    .rotate {
+        display: flex;
+    }
+    
+    .box-move1 {
+        width: 13.5vw;
+        height: 13.5vw;
+    }
+    
+    .box-move1 img {
+        width: 100%;
+    }
+    
+    .box-move2 {
+        width: 13.5vw;
+        height: 13.5vw;
+    }
+    
+    .box-move2 img {
+        width: 100%;
+    }
+    
+    .box-move3 {
+        width: 13.5vw;
+        height: 13.5vw;
+        background-color: #0B1013;
+    }
+    
+    .box-move4 {
+        width: 13.5vw;
+        height: 13.5vw;
+    }
+    
+    .box-move4 img {
+        width: 100%
+    }
+
+    /*メニュー*/
+    .box3 {
+        width: 95%;
+        height: 29vw;
+        margin-left: auto;
+    }
+    
+    .box3-title {
+        width: 62vw;
+        height: 29vw;
+        background-color: #0B1013;
+    }
+    
+    .flame3 {
+        display: flex;
+        width: 4vw;
+        height: 4vw;
+    }
+    
+    .flame3 img:nth-child(1){
+        margin-right: 50.6vw;
+    }
+    
+    .box3-title h2 {
+        font-size: 2vw;
+        font-weight: 400;
+        text-align: center;
+        color: aliceblue;
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    .box3-title p {
+        font-size: 0.8vw;
+        font-weight: 300;
+        text-align: center;
+        line-height: 1;
+        color: aliceblue;
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    .box3-title p a {
+        display: block;
+        width: 20vw;
+        height: 2.6vw;
+        padding-bottom: 0.2vw;
+        margin-top: 0.2vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.2vw;
+        color: aliceblue;
+        text-align: center;
+        line-height: 1;
+        text-decoration: none;
+        border: 1.1px solid aliceblue;
+        font-family: 'Playfair Display SC', serif;
+        transition: 1s;
+    }
+    
+    .box3-title p a:hover {
+        color: crimson;
+        transition: 1s;
+    }
+    
+    .box3-image {
+        width: 38vw;
+        height: 29vw;
+    }
+    
+    .box3-image img {
+        width: 100%;
+        height: 29vw;
+    }
+    
+    /*chef*/
+    .box4 {
+        width: 95%;
+        height: 21vw;
+        margin-left: auto;
+    }
+    
+    .box4-title {
+        width: 60vw;
+        height: 21vw;
+        background-color: #0B1013;
+    }
+    
+    .flame4 {
+        display: flex;
+        width: 4vw;
+        height: 4vw;
+    }
+    
+    .flame4 img:nth-child(1){
+        margin-right: 49vw;
+    }
+    
+    .box4-title h2 {
+        font-size: 2vw;
+        font-weight: 400;
+        text-align: center;
+        color: aliceblue;
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    .box4-title p {
+        font-size: 0.8vw;
+        font-weight: 300;
+        text-align: center;
+        line-height: 1;
+        color: aliceblue;
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    .box4-title p a {
+        display: block;
+        width: 20vw;
+        height: 2.6vw;
+        padding-bottom: 0.2vw;
+        margin-top: 0.2vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.2vw;
+        color: aliceblue;
+        text-align: center;
+        line-height: 1;
+        text-decoration: none;
+        border: 1.1px solid aliceblue;
+        font-family: 'Playfair Display SC', serif;
+        transition: 1s;
+    }
+    
+    .box4-title p a:hover {
+        color: crimson;
+        transition: 1s;
+    }
+    
+    .box4-image {
+        width: 40vw;
+        height: 21vw;
+    }
+    
+    .box4-image img {
+        width: 100%;
+    }
+
+    /*bar*/
+    .box5 {
+        width: 95%;
+        height: 22vw;
+        margin-left: auto;
+        background-color: #0B1013;
+    }
+    
+    .box5-title {
+        width: 61vw;
+        height: 22vw;
+    }
+    
+    .flame5 {
+        display: flex;
+        width: 4vw;
+        height: 4vw;
+    }
+    
+    .flame5 img:nth-child(1){
+        margin-right: 49.8vw;
+    }
+    
+    .box5-title h2 {
+        margin-bottom: 0.8vw;
+        font-size: 2vw;
+        font-weight: 400;
+        text-align: center;
+        color: aliceblue;
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    .box5-title p {
+        font-size: 0.8vw;
+        font-weight: 300;
+        text-align: center;
+        line-height: 1;
+        color: aliceblue;
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    .box5-title p a {
+        display: block;
+        width: 20vw;
+        height: 2.6vw;
+        padding-bottom: 0.2vw;
+        margin-top: 0.2vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.2vw;
+        color: aliceblue;
+        text-align: center;
+        line-height: 1;
+        text-decoration: none;
+        border: 1.1px solid aliceblue;
+        font-family: 'Playfair Display SC', serif;
+        transition: 1s;
+    }
+    
+    .box5-title p a:hover {
+        color: crimson;
+        transition: 1s;
+    }
+    
+    .box5-image {
+        width: 39vw;
+        height: 22vw;
+    }
+    
+    .box5-image img {
+        width: 100%;
+        height: 22vw;
+        background-image: url(../images/bar6.jpg);
+    }
+    
+
+    /*pool*/
+    .box6 {
+        width: 95%;
+        height: 23vw;
+        margin-left: auto;
+    }
+    
+    .box6-title {
+        width: 60vw;
+        height: 23vw;
+        background-color: #0B1013;
+    }
+    
+    .flame6 {
+        display: flex;
+        width: 4vw;
+        height: 4vw;
+    }
+    
+    .flame6 img:nth-child(1){
+        margin-right: 48.9vw;
+    }
+    
+    .box6-title h2 {
+        font-size: 2vw;
+        font-weight: 400;
+        text-align: center;
+        color: aliceblue;
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    .box6-title p {
+        font-size: 0.8vw;
+        font-weight: 300;
+        text-align: center;
+        color: aliceblue;
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    .box6-title p a {
+        display: block;
+        width: 20vw;
+        height: 2.6vw;
+        padding-bottom: 0.2vw;
+        margin-top: 0.2vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0.2vw;
+        color: aliceblue;
+        text-align: center;
+        line-height: 1;
+        text-decoration: none;
+        border: 1.1px solid aliceblue;
+        font-family: 'Playfair Display SC', serif;
+        transition: 1s;
+    }
+    
+    .box6-title p a:hover {
+        color: crimson;
+        transition: 1s;
+    }
+    
+    .box6-image {
+        width: 40vw;
+        height: 23vw;
+    }
+    
+    .box6-image img {
+        width: 100%;
+        height: 23vw;
+    }
+
+    .box7 {
+        width: 95%;
+        height: 28.4vw;
+        margin-left: auto;
+    }
+    
+    .box7-title {
+        width: 60vw;
+        height: 28.4vw;
+        background-color: #0B1013;
+    }
+    
+    .flame7 {
+        display: flex;
+        width: 4vw;
+        height: 4vw;
+    }
+    
+    .flame7 img:nth-child(1){
+        margin-right: 49vw;
+    }
+    
+    .box7-title h2 {
+        font-size: 2vw;
+        font-weight: 400;
+        text-align: center;
+        color: aliceblue;
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    .box7-title p {
+        font-size: 0.8vw;
+        font-weight: 300;
+        text-align: center;
+        color: aliceblue;
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    .box7-title p a {
+        display: block;
+        width: 20vw;
+        height: 2.6vw;
+        padding-bottom: 0.2vw;
+        margin-top: 0.2vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.2vw;
+        color: aliceblue;
+        text-align: center;
+        line-height: 1;
+        text-decoration: none;
+        border: 1.1px solid aliceblue;
+        font-family: 'Playfair Display SC', serif;
+        transition: 1s;
+    }
+    
+    .box7-title p a:hover {
+        color: crimson;
+        transition: 1s;
+    }
+
+    
+    .box7-title .match {
+        margin-left: 3vw;
+        text-align: left;
+        line-height: 1.6;
+    }
+    
+    .box7-image {
+        width: 40vw;
+        height: 28.4vw;
+    }
+    
+    .box7-image img {
+        width: 100%;
+        height: 28.4vw;
+    }
+    
+    /*アイコン*/
+    .icon-box {
+        width: 12vw;
+        margin-top: 2vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .icon-box a {
+        font-size: 2.5vw;
+        color: #111;
+        transition: 1s;
+    }
+    
+    .icon-box a:hover {
+        color: crimson;
+        transition: 1s;
+    }
+    
+    .icon-box a:nth-child(2) {
+        margin-left: 0.82vw;
+        margin-right: 0.82vw;
+    }
+    
+    
+    /*フッター*/
+    footer {
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+    }
+    
+    footer p {
+        text-align: center;
+        font-size: 0.8vw;
+    }
+}
